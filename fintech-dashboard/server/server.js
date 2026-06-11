@@ -37,9 +37,12 @@ app.get("/api/health", (_req, res) => {
 // --------------- Production Static Serving ---------------
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/dist")));
-  app.get("*", (req, res) =>
-    res.sendFile(path.join(__dirname, "../client/dist/index.html"))
-  );
+  app.get("*", (req, res) => {
+    if (req.path.startsWith("/api")) {
+      return res.status(404).json({ success: false, message: "API route not found" });
+    }
+    res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+  });
 }
 
 // 404 handler for unknown API routes (only fires in dev, or for /api/* in prod)
