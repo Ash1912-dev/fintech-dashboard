@@ -1,114 +1,51 @@
-# FinTrack — Personal Finance Dashboard
+# 💸 FinFlow — Personal Finance Dashboard
 
-A full-stack personal finance tracker built with the MERN stack. Track income and expenses, visualize spending by category, and get AI-style rule-based financial insights — all in a clean, responsive dashboard.
+A full-stack personal finance dashboard built with the **MERN stack**. Track income and expenses, visualize spending by category, and get smart rule-based financial insights — all in a clean, responsive interface.
 
-## Live Demo
+🔗 **Live Demo:** [finflow-eight-zeta.vercel.app](https://finflow-eight-zeta.vercel.app)
+🔗 **API Base:** [finflow-ugh5.onrender.com](https://finflow-ugh5.onrender.com/api/health)
 
-[🔗 Live Demo — Coming Soon](#)
+---
 
-## Features
+## ✨ Features
 
-- **Dashboard Overview** — At-a-glance summary cards showing total income, total expense, net balance, and top spending category
-- **Spending Visualization** — Interactive bar chart powered by Recharts showing expense breakdown by category
-- **Smart Insights** — Rule-based financial insight engine that provides contextual feedback (overspending warnings, food budget alerts, savings congratulations)
-- **Transaction Management** — Full CRUD: add, view, filter, and delete transactions with inline form validation
-- **Advanced Filtering** — Filter transactions by category and custom date range in real time
+| Feature | Description |
+|---------|-------------|
+| **Dashboard Overview** | At-a-glance summary cards showing total income, total expenses, net balance, and top spending category |
+| **Spending Visualization** | Interactive bar chart (Recharts) showing expense breakdown by category |
+| **Smart Insights** | Rule-based financial insight engine — overspending warnings, food budget alerts, savings congratulations |
+| **Transaction Management** | Full CRUD — add, view, filter, and delete transactions with inline form validation |
+| **Advanced Filtering** | Filter transactions by category and custom date range in real time |
+| **Responsive Design** | Fully responsive layout that works seamlessly across desktop, tablet, and mobile |
 
-## Tech Stack
+---
 
-| Layer      | Technology                                      |
-| ---------- | ----------------------------------------------- |
-| Frontend   | React 18, React Router v6, Axios, Recharts      |
-| Build Tool | Vite 5                                           |
-| Styling    | Plain CSS with CSS custom properties (no frameworks) |
-| Backend    | Node.js, Express 4                               |
-| Database   | MongoDB with Mongoose 8                          |
-| Dev Tools  | Concurrently, Nodemon                            |
+## 🛠️ Tech Stack
 
-## Local Setup
+| Layer | Technology |
+|-------|------------|
+| **Frontend** | React 18, React Router v6, Axios, Recharts |
+| **Build Tool** | Vite 5 |
+| **Styling** | Vanilla CSS with CSS Custom Properties (no frameworks) |
+| **Backend** | Node.js, Express 4 |
+| **Database** | MongoDB Atlas with Mongoose 8 |
+| **Deployment** | Vercel (frontend) · Render (backend) |
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/your-username/fintech-dashboard.git
-cd fintech-dashboard
+---
 
-# 2. Install all dependencies (root + server + client)
-npm run install:all
+## 📡 API Endpoints
 
-# 3. Set up environment variables
-#    Server:
-cp server/.env.example server/.env
-#    → Edit server/.env and set your MONGODB_URI
+| Method | Route | Description |
+|--------|-------|-------------|
+| `GET` | `/api/transactions` | Get all transactions (supports `category`, `startDate`, `endDate` query params) |
+| `GET` | `/api/transactions/summary` | Get financial summary with category-wise breakdown |
+| `POST` | `/api/transactions` | Create a new transaction |
+| `DELETE` | `/api/transactions/:id` | Delete a transaction by ID |
+| `GET` | `/api/health` | API health check |
 
-#    Client:
-cp client/.env.example client/.env
-#    → The default VITE_API_URL works for local dev
+---
 
-# 4. Seed the database with sample transactions
-cd server && npm run seed && cd ..
-
-# 5. Start both server and client in dev mode
-npm run dev
-```
-
-The app will be available at:
-- **Frontend:** http://localhost:5173
-- **Backend API:** http://localhost:5000
-
-## Environment Variables
-
-### Server (`server/.env`)
-
-| Variable       | Description                            | Example Value                                         |
-| -------------- | -------------------------------------- | ----------------------------------------------------- |
-| `MONGODB_URI`  | MongoDB connection string              | `mongodb+srv://user:pass@cluster.mongodb.net/fintech`  |
-| `PORT`         | Port for the Express server            | `5000`                                                 |
-| `FRONTEND_URL` | Production frontend URL (for CORS)     | `https://your-app.vercel.app`                          |
-| `NODE_ENV`     | Environment mode                       | `development` or `production`                          |
-
-### Client (`client/.env`)
-
-| Variable       | Description                            | Example Value                          |
-| -------------- | -------------------------------------- | -------------------------------------- |
-| `VITE_API_URL` | Base URL for API requests              | `http://localhost:5000/api`            |
-
-## API Endpoints
-
-| Method   | Route                        | Description                           | Query Params                          |
-| -------- | ---------------------------- | ------------------------------------- | ------------------------------------- |
-| `GET`    | `/api/transactions`          | Get all transactions (with filters)   | `category`, `startDate`, `endDate`    |
-| `GET`    | `/api/transactions/summary`  | Get financial summary + breakdown     | —                                     |
-| `POST`   | `/api/transactions`          | Create a new transaction              | —                                     |
-| `DELETE` | `/api/transactions/:id`      | Delete a transaction by ID            | —                                     |
-| `GET`    | `/api/health`                | API health check                      | —                                     |
-
-## Deployment
-
-### Backend on Render
-
-1. Create a **New Web Service** on [Render](https://render.com)
-2. Connect your GitHub repository
-3. Set **Root Directory** to `server/`
-4. Set **Build Command** to `npm install`
-5. Set **Start Command** to `node server.js`
-6. Add environment variables:
-   - `MONGODB_URI` — your MongoDB Atlas connection string
-   - `PORT` — `5000`
-   - `NODE_ENV` — `production`
-   - `FRONTEND_URL` — your Vercel frontend URL (e.g. `https://fintrack.vercel.app`)
-7. Deploy — Render will auto-deploy on every push to `main`
-
-### Frontend on Vercel
-
-1. Import your repository on [Vercel](https://vercel.com)
-2. Set **Root Directory** to `client/`
-3. Set **Build Command** to `npm run build`
-4. Set **Output Directory** to `dist`
-5. Add environment variable:
-   - `VITE_API_URL` — your Render backend URL + `/api` (e.g. `https://fintech-api.onrender.com/api`)
-6. Deploy — Vercel will auto-deploy on every push to `main`
-
-## Folder Structure
+## 📁 Folder Structure
 
 ```
 fintech-dashboard/
@@ -131,9 +68,7 @@ fintech-dashboard/
 │   │   ├── main.jsx
 │   │   └── index.css
 │   ├── index.html
-│   ├── vite.config.js
-│   ├── package.json
-│   └── .env.example
+│   └── vite.config.js
 ├── server/                          # Express backend
 │   ├── controllers/
 │   │   └── transactionController.js
@@ -144,19 +79,25 @@ fintech-dashboard/
 │   ├── routes/
 │   │   └── transactions.js
 │   ├── server.js
-│   ├── seed.js
-│   ├── render.yaml
-│   ├── package.json
-│   └── .env.example
-├── package.json                     # Root — concurrently scripts
-├── .gitignore
+│   └── seed.js
+├── package.json
 └── README.md
 ```
 
-## Design Decisions
+---
 
-**Rule-based Insights over ML:** A simple prioritized rule engine (overspending → food budget → savings rate → default) provides immediate, deterministic feedback without requiring training data or external AI services — ideal for a personal finance tool where users need actionable, understandable advice.
+## 🧠 Design Decisions
 
-**Recharts for Visualization:** Recharts was chosen over D3 or Chart.js because it provides declarative, React-native components (no refs or imperative DOM manipulation), built-in responsive containers, and clean defaults that match the minimal design aesthetic — all with a smaller bundle footprint.
+- **Rule-based Insights over ML** — A prioritized rule engine (overspending → food budget → savings rate → default) provides immediate, deterministic feedback without requiring training data or external AI services. Ideal for a personal finance tool where users need actionable, understandable advice.
 
-**No Authentication:** This is intentionally a single-user personal tracker. Omitting auth removes onboarding friction and keeps the focus on the core finance features. For production multi-tenant use, adding JWT or OAuth would be a natural next step.
+- **Recharts for Visualization** — Chosen over D3 or Chart.js for its declarative, React-native components, built-in responsive containers, and clean defaults — all with a smaller bundle footprint.
+
+- **Vanilla CSS with Custom Properties** — No CSS framework dependency. A design-token system via CSS custom properties ensures consistent theming, easy maintenance, and zero runtime overhead.
+
+- **No Authentication** — Intentionally a single-user personal tracker. Omitting auth removes onboarding friction and keeps the focus on core finance features.
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).

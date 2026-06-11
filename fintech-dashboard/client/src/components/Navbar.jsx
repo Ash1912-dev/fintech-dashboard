@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
   return (
     <nav className="navbar" id="navbar">
-      <span className="navbar__brand">FinTrack</span>
+      <span className="navbar__brand">FinFlow</span>
       <ul className="navbar__links">
         <li>
           <NavLink

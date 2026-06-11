@@ -1,7 +1,7 @@
 {
   "name": "fintech-dashboard",
   "version": "1.0.0",
-  "description": "FinTrack — Personal Finance Dashboard (MERN Stack)",
+  "description": "FinFlow — Personal Finance Dashboard (MERN Stack)",
   "private": true,
   "scripts": {
     "dev": "concurrently --names server,client --prefix-colors blue,magenta \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
