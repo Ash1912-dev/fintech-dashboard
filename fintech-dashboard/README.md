@@ -2,8 +2,8 @@
 
 A full-stack personal finance dashboard built with the **MERN stack**. Track income and expenses, visualize spending by category, and get smart rule-based financial insights — all in a clean, responsive interface.
 
-🔗 **Live Demo:** [https://finflow-cvva3wf9a-ash1912s-projects.vercel.app/](https://finflow-cvva3wf9a-ash1912s-projects.vercel.app/)
-🔗 **API Base:** [finflow-ugh5.onrender.com](https://finflow-ugh5.onrender.com/api/health)
+🔗 **Live Demo:** [https://finflow-ugh5.onrender.com](https://finflow-ugh5.onrender.com)
+🔗 **API Base:** [https://finflow-ugh5.onrender.com/api/health](https://finflow-ugh5.onrender.com/api/health)
 
 ---
 
@@ -29,7 +29,7 @@ A full-stack personal finance dashboard built with the **MERN stack**. Track inc
 | **Styling** | Vanilla CSS with CSS Custom Properties (no frameworks) |
 | **Backend** | Node.js, Express 4 |
 | **Database** | MongoDB Atlas with Mongoose 8 |
-| **Deployment** | Vercel (frontend) · Render (backend) |
+| **Deployment** | Render (full-stack) |
 
 ---
 
