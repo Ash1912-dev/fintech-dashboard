@@ -2,7 +2,7 @@
 
 A full-stack personal finance dashboard built with the **MERN stack**. Track income and expenses, visualize spending by category, and get smart rule-based financial insights — all in a clean, responsive interface.
 
-🔗 **Live Demo:** [finflow-eight-zeta.vercel.app](https://finflow-eight-zeta.vercel.app)
+🔗 **Live Demo:** [https://finflow-cvva3wf9a-ash1912s-projects.vercel.app/](https://finflow-cvva3wf9a-ash1912s-projects.vercel.app/)
 🔗 **API Base:** [finflow-ugh5.onrender.com](https://finflow-ugh5.onrender.com/api/health)
 
 ---
